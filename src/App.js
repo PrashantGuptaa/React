@@ -1,15 +1,10 @@
 import './App.css';
-import WelcomeClass from './components/welcomeClass';
-import WelcomeFunctionalComponent from './components/welcomeFunctional';
+import StateFunc from './components/state/stateFunc';
 
 function App() {
   return (
     <h1 className="App">
-     Draw
-    <WelcomeFunctionalComponent />
-    {/* <WelcomeClass />
-    <WelcomeFunctionalComponent />
-    <WelcomeClass /> */}
+      <StateFunc />
     </h1>
   );
 }
