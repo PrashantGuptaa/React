@@ -22,6 +22,19 @@ const StateFunc = () => {
     setLaptopCount(laptopCount - 1);
   };
 
+  const handleUniversal = (param, operation) => {
+      if(param === 'mobile') {
+          if(operation === 'increment') {
+            setMobileCount(mobileCount + 1);
+          } else {
+              setMobileCount(mobileCount - 1);
+          }
+      }
+      if(param === 'laptop') {
+          setLaptopCount(laptopCount + 1);
+      }
+  }
+
   return (
     <div>
       <h2>Mobile: {mobileCount}</h2>
@@ -29,11 +42,14 @@ const StateFunc = () => {
       <button onClick={handleDecrement}>-</button>
       <h2>Laptop: {laptopCount}</h2>
       <button onClick={handleLaptopIncrement} disabled={laptopCount >= 5}>
-        Increase
+        +
       </button>
       <button onClick={handleLaptopDecrement} disabled={laptopCount <= 0}>
-        Decrease
+        -
       </button>
+      <button onClick={() => handleUniversal('mobile', 'increment')}>Increment</button>
+      <button onClick={() => handleUniversal('mobile', 'decrement')}>Decrement</button>
+      <button onClick={() => handleUniversal('laptop', 'decrement')}>Decrement Laptop</button>
     </div>
   );
 };
