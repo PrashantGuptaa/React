@@ -24,9 +24,6 @@ const Events = () => {
     }
   };
 
-  // ? :
-
-  console.log("My Value", myValue, "length", myValue.length);
   return (
     <div>
       <h1>On Change</h1>
