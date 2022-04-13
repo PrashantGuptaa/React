@@ -1,5 +1,17 @@
 import React, { useState } from "react";
 
+const val = [
+{
+  name: 'Mobile',
+  price: 10,
+  change: 20
+},
+{
+  name: 'Mobile',
+  price: 10,
+  change: 20
+},
+]
 const StateFunc = () => {
   const [mobileCount, setMobileCount] = useState(0);
   const [laptopCount, setLaptopCount] = useState(2);
