@@ -1,67 +1,31 @@
 import "./App.css";
-import React, { useState, useRef } from "react";
-import IncrementCounter from './components/reactKey/regularCounter';
-import MultiplyCounter from "./components/reactKey/multiplyCounter";
-import UseRefHook from "./components/useRefHook/useRefHook";
+import React, { createContext, useState } from "react";
+import ChildOne from "./components/Context/childOne";
 
-const createRandomValue = () => {
-  const random = Math.random()*100;
-  return {
-    id: Math.round(random),
-    val: Math.round(random)
-  };
-}
-
-const arr = [
-  {
-    val: 10,
-    id: 0
-  },
-  {
-    val: 20,
-    id: 1
-  },
-]
+export const MyName = createContext();
+export const Institute = createContext();
+export const MyCounter = createContext();
 
 function App() {
 
-  const [myValsArr, setMyValsArr] = useState(arr);
-  // const myRef = useRef(1);
-  let data = 100;
-  
+  const [counter, setCounter] = useState(0);
 
-  const handleClick = () => {
-    const vals = [...myValsArr];
-    vals.push(createRandomValue());
-    setMyValsArr(vals);
+  const obj = {
+    counter,
+    handleChange: () => setCounter(counter + 1)
   }
 
-  // setInterval(() => {
-  //   console.log("Interval Created");
-  //   data = Math.random()*100;
-  // }, 1000)
-
-  console.log("F-1", data)
-
   return (
-    <>
-      <div className="App">
-    {/* {
-      myValsArr.map((val, i) => <IncrementCounter
-      key={val.id}
-      value={val.val} 
-      /> )
-    } */}
-    <IncrementCounter 
-    key={data}
-    value='Value of Key in React'
-    />
-    <UseRefHook/>
-        
-         {/* <button onClick={handleClick}>Click</button> */}
-      
-      </div>
-    </>
+    <div className="App">
+      <h1>App-Counter: {counter}</h1>
+      <MyName.Provider value={"Prashant"}>
+        <Institute.Provider value={"Prepbytes"}>
+          <MyCounter.Provider value={obj}>
+          <ChildOne />
+          </MyCounter.Provider>
+        </Institute.Provider>
+      </MyName.Provider>
+    </div>
   );
 }
 

@@ -10,11 +10,11 @@ const UseRefHook = () => {
 //    }, 3000);
 
 //    return () => clearInterval(timerId.current);
-    setInterval(() => {
-        const count = timerId.current + 1;
-        setCounter(count);
-        timerId.current++;
-    }, 200);
+    // setInterval(() => {
+    //     const count = timerId.current + 1;
+    //     setCounter(count);
+    //     timerId.current++;
+    // }, 200);
 
   });
 
