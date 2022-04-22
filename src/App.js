@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect, useCallback } from "react";
 import ReactMemoExample from "./components/MemoAndCallback/reactMemoAndCallback";
+import ControlledAndUnControlledComponent from "./components/ControlledAndUncontrolledComponent/concAndUncontComp";
 
 const App = () => {
   const [randomNumber, setRandomNumber] = useState(Math.random());
@@ -24,6 +25,7 @@ const App = () => {
     <div className="App">
       <h2>Random Number: {randomNumber} </h2>
       <ReactMemoExample counter={counter} handleChange={handleChange} />
+      <ControlledAndUnControlledComponent/>
     </div>
   );
 };
