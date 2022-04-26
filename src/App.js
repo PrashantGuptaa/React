@@ -1,17 +1,13 @@
 import "./App.css";
 import React from "react";
-import ClickCounter from './components/HOC/clickCounter';
-import MouseOverCounter from "./components/HOC/mouseOverCounter";
-import RightClickCounter from "./components/HOC/rightClickCounter";
+import FetchApiComponent from './components/FetchAndAxios/fetchApi';
 
 const App = () => {
 
 
   return (
     <div className="App">
-      <ClickCounter/>
-      <MouseOverCounter/>
-      <RightClickCounter/>
+      <FetchApiComponent/>
     </div>
   );
 };

@@ -36,7 +36,7 @@ const IncrementCounterHoc = (Comp) => {
         name="Prashant"
         counter={counter}
         handleChange={() => setCounter(counter + 1)}
-      />
+      /> 
     );
   };
 
