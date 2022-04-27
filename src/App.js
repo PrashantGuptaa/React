@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
-import FetchApiComponent from './components/FetchAndAxios/fetchApi';
+import ReduxCounter from "./components/ReduxComponent/counterRedux";
 
 const App = () => {
 
 
   return (
     <div className="App">
-      <FetchApiComponent/>
+      <ReduxCounter/>
     </div>
   );
 };
