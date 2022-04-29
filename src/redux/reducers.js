@@ -4,7 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 // 
 
 const counterIntialState = {
-    currentCounter: 0
+    currentCounter: 0,
+    randomValue: 1,
 }
 const counterSlice = createSlice({
     name: 'counter', // name of the reducer
@@ -12,13 +13,17 @@ const counterSlice = createSlice({
     reducers: { // reducers interact direclty with store
         increment: (state) => {
             state.currentCounter = state.currentCounter + 1;
+            state.randomValue = Math.random();
         },
         decrement: (state) => {
             state.currentCounter = state.currentCounter - 1;
+            state.randomValue = Math.random();
+
         },
-        incrementByValue: (state, action) => {
-            console.log( action.payload);
-            state.currentCounter = state.currentCounter + action.payload;
+        incrementByValue: (state, action, random) => {
+            console.log(random);
+            state.currentCounter = state.currentCounter + action.payload.value;
+            state.randomValue = action.payload.random;
         }
     }
 });
